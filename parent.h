@@ -3,10 +3,18 @@
 
 using namespace std;
 
-class parent {
+class Parent {
 
- private:
+public:
+
+  // common fields in all media: title and year
+  
+  char* title;
+  int year;
+
+  char* getTitle();
+  int getYear();
   
 }
   
-}
+
