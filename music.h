@@ -17,6 +17,4 @@ public:
   int getDuration();
   char* getPublisher();
   
-
-
-}
+};

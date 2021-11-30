@@ -10,10 +10,10 @@ public:
   // fields other than title and year: publisher and rating
 
   char* publisher;
-  char rating;
+  char* rating;
 
   char* getPublisher();
-  char getRating();
+  char* getRating();
 
   
-}
+};

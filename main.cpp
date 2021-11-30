@@ -1,22 +1,33 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
+#include <iomanip>
 #include "videogame.h"
-#include "parent.h"
+#include "media.h"
 #include "music.h"
 #include "movie.h"
 
 
 using namespace std;
 
-void addcontent() {
+void addcontent(vector<Media*> v) {
   char input[80];
   bool stilladding = true;
   while (stilladding == true) {
     cout << "Are you adding a video game (VG), song (S), or a movie (MV)?" << endl;
     cin >> input;
 
+    Media m = database[0];
+    Media* mediapointer = &m;
+
+    Movie* movie = static_cast<Movie*>(mediapointer);
+    VideoGame* videogame = static_cast<VideoGame*>(mediapointer);
+    Music* song = static_cast<Music*>(mediapointer);
+    
     if (strcmp(input, "VG") == 0) {
+      
       cout << "Enter the title of the game: " << endl;
+      cin >> videogame->title;
       cout << "Enter the year the game was made: " << endl;
       cout << "Enter the publisher for the game: " << endl;
       cout << "Enter the ESRB (rating) of the game: " << endl;
@@ -59,6 +70,8 @@ void deletecontent() {
 
 int main() {
 
+  vector<Media> m;
+
   bool cont = true;
   char input[80];
   
@@ -70,7 +83,7 @@ int main() {
     cin >> input;
 
     if (strcmp(input, "ADD") == 0) {
-      // develop add function in main
+      addcontent(&m);
     }
     if (strcmp(input, "SEARCH") == 0) {
       // develop search function in main

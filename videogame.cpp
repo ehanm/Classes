@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "parent.h"
+#include "media.h"
 #include "videogame.h"
 #include "music.h"
 #include "movie.h"

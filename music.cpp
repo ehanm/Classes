@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "videogame.h"
-#include "parent.h"
+#include "media.h"
 #include "music.h"
 #include "movie.h"
 
