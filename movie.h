@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cstring>
+#include "Media.h"
 
 using namespace std;
 
-class Movie {
+class Movie : Media{
 
 public:
 

@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstring>
+#ifndef MEDIAFILE
+#define MEDIAFILE
 
 using namespace std;
 
@@ -16,5 +18,6 @@ public:
   int getYear();
   
 };
-  
+
+#endif
 
