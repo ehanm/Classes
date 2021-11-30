@@ -10,24 +10,24 @@
 
 using namespace std;
 
-void addcontent(vector<Media*> v) {
+void addcontent(vector<Media>* v) {
   char input[80];
   bool stilladding = true;
   while (stilladding == true) {
     cout << "Are you adding a video game (VG), song (S), or a movie (MV)?" << endl;
     cin >> input;
 
-    Media m = database[0];
-    Media* mediapointer = &m;
+    Media media = v[0];
+    Media* mediapointer = &media;
 
-    Movie* movie = static_cast<Movie*>(mediapointer);
-    VideoGame* videogame = static_cast<VideoGame*>(mediapointer);
-    Music* song = static_cast<Music*>(mediapointer);
+    Movie* movie = dynamic_cast<Movie*>(mediapointer);
+    VideoGame* videogame = dynamic_cast<VideoGame*>(mediapointer);
+    Music* song = dynamic_cast<Music*>(mediapointer);
     
     if (strcmp(input, "VG") == 0) {
       
       cout << "Enter the title of the game: " << endl;
-      cin >> videogame->title;
+      cin >> VideoGame->title;
       cout << "Enter the year the game was made: " << endl;
       cout << "Enter the publisher for the game: " << endl;
       cout << "Enter the ESRB (rating) of the game: " << endl;
