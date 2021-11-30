@@ -10,21 +10,23 @@
 
 using namespace std;
 
-void addcontent(vector<Media>* v) {
+void addcontent(vector<Media*> v) {
   char input[80];
   bool stilladding = true;
   while (stilladding == true) {
     cout << "Are you adding a video game (VG), song (S), or a movie (MV)?" << endl;
     cin >> input;
 
-    Media media = v[0];
-    Media* mediapointer = &media;
+    Media media = new Media();
+    Media* mediapointer = media;
 
     Movie* movie = dynamic_cast<Movie*>(mediapointer);
     VideoGame* videogame = dynamic_cast<VideoGame*>(mediapointer);
     Music* song = dynamic_cast<Music*>(mediapointer);
     
     if (strcmp(input, "VG") == 0) {
+
+      
       
       cout << "Enter the title of the game: " << endl;
       cin >> VideoGame->title;
@@ -70,7 +72,7 @@ void deletecontent() {
 
 int main() {
 
-  vector<Media> m;
+  vector<Media*> m;
 
   bool cont = true;
   char input[80];
