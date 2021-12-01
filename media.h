@@ -11,10 +11,10 @@ public:
 
   // common fields in all media: title and year
   
-  char* title;
+  char title[1000];
   int year;
 
-  char* getTitle();
+  char getTitle();
   int getYear();
   
 };

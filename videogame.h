@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class VideoGame : Media {
+class VideoGame : public Media {
 
 public:
 

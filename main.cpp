@@ -7,33 +7,28 @@
 #include "music.h"
 #include "movie.h"
 
-
 using namespace std;
 
-void addcontent(vector<Media*> v) {
+void addcontent(vector<Media*> &v) {
   char input[80];
   bool stilladding = true;
   while (stilladding == true) {
     cout << "Are you adding a video game (VG), song (S), or a movie (MV)?" << endl;
     cin >> input;
 
-    Media media = new Media();
-    Media* mediapointer = media;
-
-    Movie* movie = dynamic_cast<Movie*>(mediapointer);
-    VideoGame* videogame = dynamic_cast<VideoGame*>(mediapointer);
-    Music* song = dynamic_cast<Music*>(mediapointer);
-    
     if (strcmp(input, "VG") == 0) {
 
-      
-      
+      VideoGame* vg = new VideoGame();      
+
       cout << "Enter the title of the game: " << endl;
-      cin >> VideoGame->title;
+      cin >> vg->title;
       cout << "Enter the year the game was made: " << endl;
+      cin >> vg->year;
       cout << "Enter the publisher for the game: " << endl;
+      cin >> vg->publisher;
       cout << "Enter the ESRB (rating) of the game: " << endl;
-      // add to parent vector
+      cin >> vg->rating;
+      (v).push_back(vg);// add to parent vector
       stilladding = false;
     }
     if (strcmp(input, "S") == 0) {
@@ -85,7 +80,7 @@ int main() {
     cin >> input;
 
     if (strcmp(input, "ADD") == 0) {
-      addcontent(&m);
+      addcontent(m);
     }
     if (strcmp(input, "SEARCH") == 0) {
       // develop search function in main
