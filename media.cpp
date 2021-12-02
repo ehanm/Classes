@@ -8,7 +8,7 @@
 
 using namespace std;
 
-char* Media::getTitle(vector<Media*>::iterator it){
+char* Media::getTitle(){
   return title;
 }
 
@@ -16,6 +16,9 @@ int Media::getYear(){
   return year;
 }
 
+int Media::getID(){
+  return id;
+}
 
 
 

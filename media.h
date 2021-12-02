@@ -14,9 +14,11 @@ public:
   
   char title[1000];
   int year;
+  int id;
 
-  char* getTitle(vector<Media*>::iterator it);
+  char* getTitle();
   int getYear();
+  int getID();
   
 };
 

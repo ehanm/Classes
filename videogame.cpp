@@ -8,10 +8,10 @@
 
 using namespace std;
 
-char VideoGame::getPublisher(vector<Media*>::iterator it){
-  
+char* VideoGame::getPublisher(){
+  return publisher;
 }
 
-char VideoGame::getRating(){
-
+char* VideoGame::getRating(){
+  return rating;
 }

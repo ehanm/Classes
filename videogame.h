@@ -14,8 +14,8 @@ public:
   char publisher[1000];
   char rating[10];
 
-  char getPublisher(vector<Media*>::iterator it);
-  char getRating();
+  char* getPublisher();
+  char* getRating();
 
   
 };

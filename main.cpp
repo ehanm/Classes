@@ -11,6 +11,7 @@ using namespace std;
 
 void addcontent(vector<Media*> &v) {
   char input[80];
+  int x; // 0 = videogame, 1 = song, 2 = movie
   bool stilladding = true;
   while (stilladding == true) {
     cout << "Are you adding a video game (VG), song (S), or a movie (MV)?" << endl;
@@ -18,7 +19,11 @@ void addcontent(vector<Media*> &v) {
 
     if (strcmp(input, "VG") == 0) {
 
-      VideoGame* vg = new VideoGame();      
+      VideoGame* vg = new VideoGame();
+
+      x = 0;
+
+      vg->id = x;
 
       cout << "Enter the title of the game: " << endl;
       cin >> vg->title;
@@ -74,16 +79,20 @@ void search(vector<Media*> &m) {
     cout << "Insert the title of the media" << endl;
     cin >> input3;
 
-    for (int i = 0; input3[i] != '\0'; i++){
-      cout << input3[i];
-    }
-
-    cout << (*it)->title;
-
     for (it = (m).begin(); it < (m).end(); it++) {
-      if ((*it)->title == input3){
+      if (strcmp((*it)->title, input3) == 0){
 
-	cout << "it works!!!";
+	if ((*it)->id == getID()) {
+	  cout << "videogame";
+	}
+	if ((*it)->id == getID()) {
+	  cout << "song";
+	}
+	if ((*it)->id == getID()) {
+	  cout << "movie";
+	}
+
+	cout << "it works!!!" << endl;
 	
       }
       
@@ -100,7 +109,7 @@ void search(vector<Media*> &m) {
       compare = (*it)->year;
       if (compare == input2){
 
-	cout << (*it)->getTitle(it) << " ";
+	cout << (*it)->getTitle() << " ";
       }
     }
   
