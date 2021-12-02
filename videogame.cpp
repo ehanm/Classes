@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 #include "media.h"
 #include "videogame.h"
 #include "music.h"
@@ -7,4 +8,10 @@
 
 using namespace std;
 
-// create video game child class
+char VideoGame::getPublisher(vector<Media*>::iterator it){
+  
+}
+
+char VideoGame::getRating(){
+
+}

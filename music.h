@@ -10,12 +10,12 @@ public:
 
   // fields in music other than title and year: artist, duration, publisher
 
-  char* artist;
+  char artist[1000];
   int duration;
-  char* publisher;
+  char publisher[1000];
 
-  char* getArtist();
+  char getArtist();
   int getDuration();
-  char* getPublisher();
+  char getPublisher();
   
 };

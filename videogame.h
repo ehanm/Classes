@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 #include "Media.h"
 
 using namespace std;
@@ -10,11 +11,11 @@ public:
 
   // fields other than title and year: publisher and rating
 
-  char* publisher;
-  char* rating;
+  char publisher[1000];
+  char rating[10];
 
-  char* getPublisher();
-  char* getRating();
+  char getPublisher(vector<Media*>::iterator it);
+  char getRating();
 
   
 };

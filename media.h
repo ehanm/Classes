@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 #ifndef MEDIAFILE
 #define MEDIAFILE
 
@@ -14,7 +15,7 @@ public:
   char title[1000];
   int year;
 
-  char getTitle();
+  char* getTitle(vector<Media*>::iterator it);
   int getYear();
   
 };
