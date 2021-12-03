@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Music : Media{
+class Music : public Media{
 
 public:
 
@@ -14,8 +14,10 @@ public:
   int duration;
   char publisher[1000];
 
-  char getArtist();
+  char* getArtist();
   int getDuration();
-  char getPublisher();
+  char* getPublisher();
+
+  void printMusic();
   
 };

@@ -16,6 +16,7 @@ public:
 
   char* getPublisher();
   char* getRating();
+  void printVideoGame();
 
   
 };

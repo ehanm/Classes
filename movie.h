@@ -4,18 +4,20 @@
 
 using namespace std;
 
-class Movie : Media{
+class Movie : public Media{
 
 public:
 
   // fields other than title and year: director, duration, rating
 
-  char* director;
+  char director[1000];
   int duration;
-  char* rating;
+  char rating[1000];
 
   char* getDirector();
   int getDuration();
   char* getRating();
+
+  void printMovie();
   
 };

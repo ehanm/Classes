@@ -37,19 +37,43 @@ void addcontent(vector<Media*> &v) {
       stilladding = false;
     }
     else if (strcmp(input, "S") == 0) {
+
+      Music* s = new Music();
+
+      x = 1;
+      s->id = x;
+      
       cout << "Enter the title of the song: " << endl;
+      cin >> s->title;
       cout << "Enter the song's artist: " << endl;
+      cin >> s->artist;
       cout << "Enter the year of the song's release: " << endl;
+      cin >> s->year;
       cout << "Enter the duration of the song in minutes: " << endl;
+      cin >> s->duration;
       cout << "Enter the publisher of the song: " << endl;
+      cin >> s->publisher;
+      (v).push_back(s);
       stilladding = false;
     }
     else if (strcmp(input, "MV") == 0) {
+
+      Movie* mv = new Movie();
+
+      x = 2;
+      mv->id = x;
+      
       cout << "Enter the title of the movie: " << endl;
+      cin >> mv->title;
       cout << "Enter the director of the movie: " << endl;
+      cin >> mv->director;
       cout << "Enter the year the movie was released: " << endl;
+      cin >> mv->year;
       cout << "Enter the duration of the movie in minutes: " << endl;
+      cin >> mv->duration;
       cout << "Enter the rating of the movie: " << endl;
+      cin >> mv->rating;
+      (v).push_back(mv);
       stilladding = false;
     }
     else {
@@ -69,7 +93,7 @@ void search(vector<Media*> &m) {
   int input2;
   int compare;
   vector<Media*>::iterator it;
-  
+
   cout << "Do you want to search by title(T) or year(Y)?" << endl;
 
   cin >> input;
@@ -82,14 +106,20 @@ void search(vector<Media*> &m) {
     for (it = (m).begin(); it < (m).end(); it++) {
       if (strcmp((*it)->title, input3) == 0){
 
-	if ((*it)->id == getID()) {
-	  cout << "videogame";
+	if ((*it)->getID() == 0) {
+
+	  (*it)->printVideoGame();
+	  
 	}
-	if ((*it)->id == getID()) {
-	  cout << "song";
+	if ((*it)->getID() == 1) {
+
+	  (*it)->printMusic();
+
 	}
-	if ((*it)->id == getID()) {
-	  cout << "movie";
+	if ((*it)->getID() == 2) {
+
+	  (*it)->printMovie();
+	  
 	}
 
 	cout << "it works!!!" << endl;

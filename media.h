@@ -19,6 +19,10 @@ public:
   char* getTitle();
   int getYear();
   int getID();
+
+  void printVideoGame();
+  void printMusic();
+  void printMovie();
   
 };
 

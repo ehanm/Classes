@@ -5,7 +5,18 @@
 #include "music.h"
 #include "movie.h"
 
-
 using namespace std;
 
-// create music child class
+char* Music::getArtist(){
+  return artist;
+}
+int Music::getDuration(){
+  return duration;
+}
+char* Music::getPublisher(){
+  return publisher;
+}
+
+void Music::printMusic(){
+  cout << title << " " << year << " " << artist << " " << duration << " " << publisher << endl;
+}

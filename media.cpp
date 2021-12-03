@@ -20,6 +20,12 @@ int Media::getID(){
   return id;
 }
 
+void Media::printVideoGame(){
+}
+void Media::printMusic(){
+}
+void Media::printMovie(){
+}
 
 
 // create parent class
