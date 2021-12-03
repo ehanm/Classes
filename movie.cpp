@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cstring>
 #include "media.h"
-#include "videogame.h"
-#include "music.h"
 #include "movie.h"
 
 using namespace std;
@@ -19,5 +17,5 @@ char* Movie::getRating(){
 }
 
 void Movie::printMovie(){
-  cout << title << " " << year << " " << director << " " << duration << " " << rating << endl;
+  cout << "Title: " << getTitle() << " " << "Year: " << getYear() << " " << "Director: " << getDirector() << " " << "Duration: " << getDuration() << " " << "Rating: " << getRating() << endl;
 }

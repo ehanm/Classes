@@ -1,9 +1,7 @@
 #include <iostream>
 #include <cstring>
-#include "videogame.h"
 #include "media.h"
 #include "music.h"
-#include "movie.h"
 
 using namespace std;
 
@@ -18,5 +16,5 @@ char* Music::getPublisher(){
 }
 
 void Music::printMusic(){
-  cout << title << " " << year << " " << artist << " " << duration << " " << publisher << endl;
+  cout << "Title: " << getTitle() << " " << "Year: " << getYear() << " " << "Artist: " << getArtist() << " " << "Duration: " << getDuration() << " " << "Publisher: " << getPublisher() << endl;
 }

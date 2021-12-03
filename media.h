@@ -20,9 +20,9 @@ public:
   int getYear();
   int getID();
 
-  void printVideoGame();
-  void printMusic();
-  void printMovie();
+  virtual void printVideoGame();
+  virtual void printMusic();
+  virtual void printMovie();
   
 };
 

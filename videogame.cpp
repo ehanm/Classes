@@ -3,8 +3,6 @@
 #include <vector>
 #include "media.h"
 #include "videogame.h"
-#include "music.h"
-#include "movie.h"
 
 using namespace std;
 
@@ -17,5 +15,5 @@ char* VideoGame::getRating(){
 }
 
 void VideoGame::printVideoGame(){
-  cout << title << " " << year << " " << publisher << " " << rating << endl;
+  cout << "Title: " << getTitle() << " " << "Year: "<<  getYear() << " " << "Publisher: " << getPublisher() << " " << "Rating: " << getRating() << endl;
 }

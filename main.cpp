@@ -103,26 +103,35 @@ void search(vector<Media*> &m) {
     cout << "Insert the title of the media" << endl;
     cin >> input3;
 
+    cout << "Searching..." << endl;
+    cout << " " << endl;
+    cout << " " << endl;
+    
+
     for (it = (m).begin(); it < (m).end(); it++) {
       if (strcmp((*it)->title, input3) == 0){
 
 	if ((*it)->getID() == 0) {
+
+	  cout << "Videogame: ";
 
 	  (*it)->printVideoGame();
 	  
 	}
 	if ((*it)->getID() == 1) {
 
+	  cout << "Song: ";
+	  
 	  (*it)->printMusic();
 
 	}
 	if ((*it)->getID() == 2) {
-
+	  
+	  cout << "Movie: ";
+	  
 	  (*it)->printMovie();
 	  
 	}
-
-	cout << "it works!!!" << endl;
 	
       }
       
@@ -135,11 +144,34 @@ void search(vector<Media*> &m) {
 
     cin >> input2;
 
+    cout << "Searching..." << endl;
+    cout << " " << endl;
+    cout << " " << endl;
+    
     for (it = m.begin(); it < m.end(); it++) {
-      compare = (*it)->year;
-      if (compare == input2){
+      if ((*it)->year == input2){
 
-	cout << (*it)->getTitle() << " ";
+	if ((*it)->getID() == 0) {
+
+	  cout << "Videogame: ";
+	  (*it)->printVideoGame();
+	  
+	}
+	if ((*it)->getID() == 1) {
+
+	  cout << "Song: ";
+	  (*it)->printMusic();
+	  
+	}
+	if ((*it)->getID() == 2) {
+
+	  cout << "Movie: ";
+	  (*it)->printMovie();
+	  
+	}
+
+	
+        
       }
     }
   
