@@ -19,5 +19,7 @@ public:
   char* getPublisher();
 
   void printMusic();
+
+  ~Music();
   
 };

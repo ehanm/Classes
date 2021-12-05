@@ -18,5 +18,6 @@ public:
   char* getRating();
   void printVideoGame();
 
+  ~VideoGame();
   
 };

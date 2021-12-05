@@ -19,3 +19,6 @@ char* Movie::getRating(){
 void Movie::printMovie(){
   cout << "Title: " << getTitle() << " " << "Year: " << getYear() << " " << "Director: " << getDirector() << " " << "Duration: " << getDuration() << " " << "Rating: " << getRating() << endl;
 }
+
+Movie::~Movie(){
+}

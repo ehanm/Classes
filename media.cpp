@@ -27,5 +27,7 @@ void Media::printMusic(){
 void Media::printMovie(){
 }
 
+Media::~Media(){
+}
 
 // create parent class

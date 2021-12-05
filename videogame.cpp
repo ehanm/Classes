@@ -17,3 +17,6 @@ char* VideoGame::getRating(){
 void VideoGame::printVideoGame(){
   cout << "Title: " << getTitle() << " " << "Year: "<<  getYear() << " " << "Publisher: " << getPublisher() << " " << "Rating: " << getRating() << endl;
 }
+
+VideoGame::~VideoGame(){
+}

@@ -91,7 +91,6 @@ void search(vector<Media*> &m) {
   char input[100];
   char input3[1000];
   int input2;
-  int compare;
   vector<Media*>::iterator it;
 
   cout << "Do you want to search by title(T) or year(Y)?" << endl;
@@ -113,11 +112,11 @@ void search(vector<Media*> &m) {
 
 	if ((*it)->getID() == 0) {
 
-	  cout << "Videogame: ";
+	cout << "Videogame: ";
 
 	  (*it)->printVideoGame();
 	  
-	}
+	  }
 	if ((*it)->getID() == 1) {
 
 	  cout << "Song: ";
@@ -178,8 +177,75 @@ void search(vector<Media*> &m) {
   }
 }
 
-void deletecontent() {
+void deletecontent(vector<Media*> &m) {
 
+  char input[10];
+  char input2[1000];
+  char input3[10];
+  int input4;
+
+  vector<Media*>::iterator it;
+  
+  Media* pointer;
+  
+  cout << "Do you want to delete by title(T) or year(Y)?" << endl;
+
+  cin >> input;
+
+  if (strcmp(input, "T") == 0){
+
+    cout << "Enter the title of the media you would like to delete." << endl;
+    cin >> input2;
+
+    for (int i = 0; i < m.size(); i++){
+      if (strcmp(m[i]->title, input2) == 0){
+
+	m[i]->printVideoGame();
+	m[i]->printMusic();
+	m[i]->printMovie();
+	
+        cout << "Are you sure you want to delete this media? (Y/N)" << endl;
+	cin >> input3;
+
+	if (strcmp(input3, "Y") == 0) {
+	  delete m[i];
+	 
+	}
+	
+      }
+    }
+    
+  }
+  if (strcmp(input, "Y") == 0){
+
+    cout << "Enter the year of the media you would like to delete." << endl;
+    cin >> input4;
+
+    for (int i = 0; i < m.size(); i++){
+      if (m[i]->year == input4){
+
+        m[i]->printVideoGame();
+        m[i]->printMusic();
+        m[i]->printMovie();
+
+        cout << "Are you sure you want to delete this media? (Y/N)" << endl;
+        cin >> input3;
+
+        if (strcmp(input3, "Y") == 0){
+          delete m[i];
+
+        }
+
+      }
+    }
+    
+
+  }
+  
+
+  
+
+  
 }
 
 int main() {
@@ -203,7 +269,7 @@ int main() {
       search(m);
     }
     else if (strcmp(maininput, "DELETE") == 0) {
-      // develop delete function in main
+      deletecontent(m);
     }
     else if (strcmp(maininput, "QUIT") == 0) {
       cont = false;

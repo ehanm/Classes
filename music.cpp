@@ -18,3 +18,6 @@ char* Music::getPublisher(){
 void Music::printMusic(){
   cout << "Title: " << getTitle() << " " << "Year: " << getYear() << " " << "Artist: " << getArtist() << " " << "Duration: " << getDuration() << " " << "Publisher: " << getPublisher() << endl;
 }
+
+Music::~Music(){
+}

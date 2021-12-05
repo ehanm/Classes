@@ -20,4 +20,7 @@ public:
 
   void printMovie();
   
+
+  ~Movie();
+  
 };

@@ -23,7 +23,8 @@ public:
   virtual void printVideoGame();
   virtual void printMusic();
   virtual void printMovie();
-  
+
+  virtual ~Media();
 };
 
 #endif
