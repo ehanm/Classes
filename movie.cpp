@@ -3,7 +3,7 @@
 #include "media.h"
 #include "movie.h"
 
-using namespace std;
+using namespace std; // the code behind the function prototypes
 
 char* Movie::getDirector(){
   return director;

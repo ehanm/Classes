@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Music : public Media{
+class Music : public Media{ // music child class with definitions and function prototypes
 
 public:
 

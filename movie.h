@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Movie : public Media{
+class Movie : public Media{ // the child class for movies
 
 public:
 

@@ -6,7 +6,7 @@
 #include "music.h"
 #include "movie.h"
 
-using namespace std;
+using namespace std; 
 
 char* Media::getTitle(){
   return title;
@@ -30,4 +30,4 @@ void Media::printMovie(){
 Media::~Media(){
 }
 
-// create parent class
+// creation of parent class

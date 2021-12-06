@@ -1,3 +1,10 @@
+// Welcome to Classes! This is a program that can allow the user to enter different types of media, search and print them out, and delete them.
+// By: Ehan Masud
+// Completed 12/5/2021
+
+// Major credits to Nikhil, Nihal, and Kushal to giving me ideas when stuck
+
+
 #include <iostream>
 #include <cstring>
 #include <vector>
@@ -9,15 +16,15 @@
 
 using namespace std;
 
-void addcontent(vector<Media*> &v) {
+void addcontent(vector<Media*> &v) { // add function
   char input[80];
-  int x; // 0 = videogame, 1 = song, 2 = movie
+  int x; // for id: 0 = videogame, 1 = song, 2 = movie
   bool stilladding = true;
   while (stilladding == true) {
     cout << "Are you adding a video game (VG), song (S), or a movie (MV)?" << endl;
     cin >> input;
 
-    if (strcmp(input, "VG") == 0) {
+    if (strcmp(input, "VG") == 0) { // add videogame
 
       VideoGame* vg = new VideoGame();
 
@@ -36,7 +43,7 @@ void addcontent(vector<Media*> &v) {
       (v).push_back(vg);// add to parent vector
       stilladding = false;
     }
-    else if (strcmp(input, "S") == 0) {
+    else if (strcmp(input, "S") == 0) { // add song
 
       Music* s = new Music();
 
@@ -56,7 +63,7 @@ void addcontent(vector<Media*> &v) {
       (v).push_back(s);
       stilladding = false;
     }
-    else if (strcmp(input, "MV") == 0) {
+    else if (strcmp(input, "MV") == 0) { // add movie
 
       Movie* mv = new Movie();
 
@@ -86,7 +93,7 @@ void addcontent(vector<Media*> &v) {
   
 }
 
-void search(vector<Media*> &m) {
+void search(vector<Media*> &m) { // function to search for content
 
   char input[100];
   char input3[1000];
@@ -177,7 +184,7 @@ void search(vector<Media*> &m) {
   }
 }
 
-void deletecontent(vector<Media*> &m) {
+void deletecontent(vector<Media*> &m) { // deleting stuff
 
   char input[10];
   char input2[1000];
@@ -197,18 +204,19 @@ void deletecontent(vector<Media*> &m) {
     cout << "Enter the title of the media you would like to delete." << endl;
     cin >> input2;
 
-    for (int i = 0; i < m.size(); i++){
-      if (strcmp(m[i]->title, input2) == 0){
+    for (int i = 0; i < m.size(); i++){ // goes through the vector (not with a vector iterator)
+      if (strcmp(m[i]->title, input2) == 0){  // if the title is the same as the input
 
 	m[i]->printVideoGame();
 	m[i]->printMusic();
-	m[i]->printMovie();
+	m[i]->printMovie(); // shows the user what they are deleting
 	
         cout << "Are you sure you want to delete this media? (Y/N)" << endl;
 	cin >> input3;
 
 	if (strcmp(input3, "Y") == 0) {
 	  delete m[i];
+	  m.erase(m.begin() + i);
 	 
 	}
 	
@@ -226,13 +234,14 @@ void deletecontent(vector<Media*> &m) {
 
         m[i]->printVideoGame();
         m[i]->printMusic();
-        m[i]->printMovie();
+        m[i]->printMovie();// same as above but with year
 
         cout << "Are you sure you want to delete this media? (Y/N)" << endl;
         cin >> input3;
 
         if (strcmp(input3, "Y") == 0){
           delete m[i];
+	  m.erase(m.begin() + i);
 
         }
 
@@ -257,21 +266,21 @@ int main() {
   
   cout << "Welcome to Classes!" << endl;
 
-  while (cont == true) {
+  while (cont == true) { // the loop that keeps everything going
     cout << "Would you like to ADD, SEARCH, DELETE, or QUIT?" << endl;
 
     cin >> maininput;
 
-    if (strcmp(maininput, "ADD") == 0) {
+    if (strcmp(maininput, "ADD") == 0) { // type add to add
       addcontent(m);
     }
-    else if (strcmp(maininput, "SEARCH") == 0) {
+    else if (strcmp(maininput, "SEARCH") == 0) { // type search to search
       search(m);
     }
-    else if (strcmp(maininput, "DELETE") == 0) {
+    else if (strcmp(maininput, "DELETE") == 0) { // type delete to delete (wow!)
       deletecontent(m);
     }
-    else if (strcmp(maininput, "QUIT") == 0) {
+    else if (strcmp(maininput, "QUIT") == 0) { // quit
       cont = false;
       break;
     }

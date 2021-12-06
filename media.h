@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
-#ifndef MEDIAFILE
+#ifndef MEDIAFILE // to combat redefinition errors
 #define MEDIAFILE
 
 using namespace std;
 
-class Media {
+class Media { // parent class
 
 public:
 
@@ -20,11 +20,11 @@ public:
   int getYear();
   int getID();
 
-  virtual void printVideoGame();
+  virtual void printVideoGame(); // so print function looks fancy, but could have just use one singular print function if I wanted
   virtual void printMusic();
   virtual void printMovie();
 
-  virtual ~Media();
+  virtual ~Media(); //destructor
 };
 
 #endif

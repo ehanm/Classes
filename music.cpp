@@ -3,7 +3,7 @@
 #include "media.h"
 #include "music.h"
 
-using namespace std;
+using namespace std; // code behind the functions
 
 char* Music::getArtist(){
   return artist;

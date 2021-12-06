@@ -4,7 +4,7 @@
 #include "media.h"
 #include "videogame.h"
 
-using namespace std;
+using namespace std; //actual code behind getting variables and printing
 
 char* VideoGame::getPublisher(){
   return publisher;

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class VideoGame : public Media {
+class VideoGame : public Media { // videogame class definitions
 
 public:
 
